@@ -50,6 +50,14 @@ h3 {
     font-size: 1.1rem;
 }
 
+#menu-toggle {
+    display: none;
+}
+
+label {
+    display: none;
+}
+
 nav {
     flex: 2;
     display: flex;
@@ -251,6 +259,31 @@ footer {
 /*Tablets*/
 
 @media (max-width: 1024px) {
+
+    nav ul, .card ul {
+        gap: 10px;
+    }
+     #presentacion{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 25px;
+        width: 90%;
+        margin: 3vh auto;
+        padding: 0;
+        height: auto;
+    }
+
+    #presentacion img{
+        width: 250px;
+        height: 250px;
+    }
+
+    .presentacion__texto{
+        width: 100%;
+        margin: 0;
+        padding: 30px;
+    }
+
     .contenedor__habilidades {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -258,22 +291,77 @@ footer {
 
 
 /*Móviles*/
-@media (max-width: 768px) {
-    section {
+@media (max-width:768px){
+    header{
+        flex-wrap: wrap;
+    }
+
+    header h1 {
+        font-size: 1rem;
+    }
+
+    label{
+        display: block;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    label img{
+        width: 32px;
+        height: 32px;
+    }
+
+    nav{
+        display: none;
+        flex-basis: 100%;
+        margin-top: 15px;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    #menu-toggle:checked + label + nav{
+        display:block;
+    }
+
+    #presentacion{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 25px;
+        width: 90%;
+        margin: 3vh auto;
         padding: 0;
+        height: auto;
+    }
+
+    #presentacion img{
+        width: 250px;
+        height: 250px;
+    }
+
+    .presentacion__texto{
+        width: 100%;
+        margin: 0;
+        padding: 30px;
     }
 
     .contenedor__habilidades {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr)
     }
 
-    #presentacion {
-        display: grid;
-        grid-template-columns: 1fr;
-        padding: 18px;
-    }    
+    .habilidades__texto {
+        padding: 3vw;
+    }
 
-    .presentacion__texto {
-        margin: 18;
+    .mini__card ul {
+        margin-left: 3vw;
+    }
+
+    #contacto {
+        padding: 3vw;
     }
 }
